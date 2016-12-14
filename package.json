@@ -1,6 +1,6 @@
 {
   "name": "lodybo-ghost",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Heroku pre-configured Ghost instance",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/lodybo/lodybo-ghost/issues"
   },
-  "homepage": "https://github.com/lodybo/lodybo-ghost#readme"
+  "homepage": "https://github.com/lodybo/lodybo-ghost#readme",
+  "devDependencies": {
+    "rimraf": "^2.5.4",
+    "node-uncompress": "^0.1.8",
+    "cpy-cli": "^1.0.1"
+  }
 }
