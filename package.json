@@ -1,10 +1,15 @@
 {
   "name": "lodybo-ghost",
-  "version": "0.0.10",
+  "version": "1.0.0",
   "description": "Heroku pre-configured Ghost instance",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf ghost/",
+    "get-ghost": "mkdir ghost && cd ghost && curl -LOk https://ghost.org/zip/ghost-latest.zip",
+    "unzip-ghost": "decompress ghost/ghost-latest.zip -o ghost/",
+    "move-conf": "cpy configs/config.js ghost/",
+    "delete-zip": "rimraf ghost/ghost-latest.zip",
+    "upgrade-ghost": "npm run clean && npm run get-ghost && npm run unzip-ghost && npm run move-conf && npm run delete-zip"
   },
   "repository": {
     "type": "git",
@@ -17,8 +22,8 @@
   },
   "homepage": "https://github.com/lodybo/lodybo-ghost#readme",
   "devDependencies": {
-    "rimraf": "^2.5.4",
-    "node-uncompress": "^0.1.8",
-    "cpy-cli": "^1.0.1"
+    "cpy-cli": "^1.0.1",
+    "decompress-cli": "^2.0.0",
+    "rimraf": "^2.5.4"
   }
 }
